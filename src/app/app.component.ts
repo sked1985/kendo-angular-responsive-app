@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { Router, Event, NavigationEnd } from '@angular/router';
 import { DrawerItem, DrawerSelectEvent } from '@progress/kendo-angular-layout';
+import { Observable } from 'rxjs';
+import { filter, tap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-root',
@@ -7,6 +10,14 @@ import { DrawerItem, DrawerSelectEvent } from '@progress/kendo-angular-layout';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  currentRoute: string;
+
+  constructor(private router:Router) {
+    router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(route => this.currentRoute = route['url'])
+  }
+
   public selected = 'Inbox';
   public kendokaAvatar = 'https://www.telerik.com/kendo-angular-ui-develop/components/navigation/appbar/assets/kendoka-angular.png';
   active = false;

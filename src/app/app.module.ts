@@ -9,21 +9,28 @@ import { LayoutModule } from '@progress/kendo-angular-layout';
 import { IndicatorsModule } from '@progress/kendo-angular-indicators';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { IconsModule } from '@progress/kendo-angular-icons';
+import { LabelModule } from '@progress/kendo-angular-label';
 import { NavigationModule } from '@progress/kendo-angular-navigation';
+import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     LayoutModule,
     IndicatorsModule,
     IconsModule,
     InputsModule,
-    NavigationModule
+    NavigationModule,
+    LabelModule
   ],
   providers: [],
   bootstrap: [AppComponent]

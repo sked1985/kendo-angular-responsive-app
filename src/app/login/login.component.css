@@ -1,0 +1,13 @@
+main {
+    background-color: #dddedf;
+    height: 100vh;
+    display: flex;
+}
+.sign-in {
+    background: #fff;
+    margin: auto;
+}
+.k-avatar {
+    margin-left: 80px;
+    font-size: 30px;
+  }

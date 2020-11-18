@@ -1,0 +1,38 @@
+<main>
+    <div class="sign-in">
+        <kendo-card [width]="'360px'">
+            <kendo-card-body>
+                <form class="k-form" [formGroup]="form">
+                    <fieldset class="k-form-fieldset">
+                        <legend class="k-form-legend">Your account</legend>
+    
+                        <kendo-avatar [initials]="'EG'" width="80px"  height="80px" [shape]="'circle'"></kendo-avatar>
+                        <kendo-formfield>
+                            <kendo-label [for]="username" text="Username"></kendo-label>
+                            <input formControlName="username" kendoTextBox #username required/>
+    
+                            <kendo-formhint>Your Username</kendo-formhint>
+                            <kendo-formerror>Error: Username is required</kendo-formerror>
+                        </kendo-formfield>
+                        <kendo-formfield>
+    
+                            <kendo-label [for]="password" text="Password">
+                            </kendo-label>
+                            <input type="password" formControlName="password" kendoTextBox #password required/>
+    
+                            <kendo-formhint>Your password</kendo-formhint>
+                            <kendo-formerror>Error: Password is required</kendo-formerror>
+                        </kendo-formfield>
+    
+                        
+    
+                        <div class="k-form-buttons">
+                            <button class="k-button k-primary" (click)="login()">Login</button>
+                            <button class="k-button" (click)="clearForm()">Clear</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </kendo-card-body>
+        </kendo-card>
+    </div>
+</main>
