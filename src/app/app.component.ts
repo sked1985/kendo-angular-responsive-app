@@ -11,6 +11,12 @@ import { filter, tap } from 'rxjs/operators'
 })
 export class AppComponent {
   currentRoute: string;
+  items1 = [
+    {
+        text: '',
+        items: [{ text: 'profile' }, { text: 'logout' }]
+    }
+];
 
   constructor(private router:Router) {
     router.events.pipe(
@@ -21,7 +27,7 @@ export class AppComponent {
   public selected = 'Inbox';
   public kendokaAvatar = 'https://www.telerik.com/kendo-angular-ui-develop/components/navigation/appbar/assets/kendoka-angular.png';
   active = false;
-  selectedTab = 0;
+  
 
   public items: Array<DrawerItem> = [
       { text: 'Inbox', icon: 'k-i-inbox', selected: true },
@@ -36,12 +42,17 @@ export class AppComponent {
   public onSelect(ev: DrawerSelectEvent): void {
       this.selected = ev.item.text;
   }
+  
+  onSelectMenu(event) {
+    if (event.item.text !== "") {
+      if(event.item.text === "logout") {
+        this.router.navigate(["login"])
+      }
+    } 
+  }
 
-  toggle(drawer) {
+  toggle() {
     this.active = !this.active;
   }
 
-  onTabSelect(event) {
-    this.selectedTab = event.index;
-  }
 }

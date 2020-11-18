@@ -1,8 +1,8 @@
 <kendo-appbar [position]="'top'" style="height: 10vh;" *ngIf="currentRoute !=='/login'">
   <kendo-appbar-section>
-    <!-- <button class="k-button k-button-clear menu-btn" (click)="toggle(drawer)">
+    <button class="k-button k-button-clear menu-btn" (click)="toggle()">
       <kendo-icon [name]="'menu'"></kendo-icon>
-    </button> -->
+    </button>
   </kendo-appbar-section>
   <kendo-appbar-section>
     <h1 class="title">Menu</h1>
@@ -10,7 +10,11 @@
   <kendo-appbar-spacer [width]="'32px'"></kendo-appbar-spacer>
   <kendo-appbar-spacer></kendo-appbar-spacer>
   <kendo-appbar-section>
-    <kendo-avatar [imageSrc]="kendokaAvatar" [shape]="'circle'" [width]="'40px'" [height]="'40px'"></kendo-avatar>
+   <div> 
+    <kendo-avatar [imageSrc]="kendokaAvatar" [shape]="'circle'" [width]="'40px'" [height]="'40px'" #target></kendo-avatar>
+    <kendo-menu [items]="items1" [openOnClick]="true" (select)="onSelectMenu($event)">
+ </kendo-menu>
+   </div>
   </kendo-appbar-section>
 </kendo-appbar>
 <kendo-drawer-container>
@@ -27,156 +31,5 @@
   </kendo-drawer>
   <kendo-drawer-content>
     <router-outlet></router-outlet>
-    <!-- <main>
-      <header>
-        <div class="work-item-count">
-          <span>14 of 14</span><br />
-          <span>Total workload</span>
-        </div>
-        <div class="tab-nav">
-          <kendo-tabstrip (tabSelect)="onTabSelect($event)">
-            <kendo-tabstrip-tab [selected]="true">
-              <ng-template kendoTabTitle>
-                <span class="k-icon k-i-grid"></span>
-              </ng-template>
-            </kendo-tabstrip-tab>
-            <kendo-tabstrip-tab>
-              <ng-template kendoTabTitle>
-                <span class="k-icon k-i-list-unordered"></span>
-              </ng-template>
-            </kendo-tabstrip-tab>
-          </kendo-tabstrip>
-        </div>
-      </header>
-      <div class="filter-area">
-        <div class="filter-section">
-          <h6>SLA</h6>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            In Service
-          </label>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            Going Out
-          </label>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            Out of Service
-          </label>
-        </div>
-        <div class="filter-section">
-          <h6>Worktype</h6>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            Worktype
-          </label>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            Complaints
-          </label>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            Loans
-          </label>
-        </div>
-        <div class="filter-section">
-          <h6>Region</h6>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            North
-          </label>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            South
-          </label>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            East
-          </label>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            West
-          </label>
-        </div>
-        <div class="filter-section">
-          <h6>Region</h6>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            North
-          </label>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            South
-          </label>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            East
-          </label>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            West
-          </label>
-        </div>
-        <div class="filter-section">
-          <h6>Region</h6>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            North
-          </label>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            South
-          </label>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            East
-          </label>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            West
-          </label>
-        </div>
-      </div>  
-      <div class="main-content" *ngIf="selectedTab === 0">
-        <div class="main-content-header">
-          <div class="content-duration">
-            <div class="count">
-              <h5>120</h5>
-              items
-            </div>
-            <div class="seperator"></div>
-            <div class="duration">
-              <h5>12hr</h5>
-            duration
-            </div>
-          </div>
-          <div class="header-btn">
-            <button kendoButton style="width: 61px;">Sort</button>
-          </div>
-        </div>
-        <div class="main-content-tiles">
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
-        </div>
-      </div>
-      <div class="main-content" *ngIf="selectedTab === 1">
-        diplay list
-      </div>
-    </main> -->
   </kendo-drawer-content>
 </kendo-drawer-container>

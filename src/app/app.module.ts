@@ -11,13 +11,17 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
 import { IconsModule } from '@progress/kendo-angular-icons';
 import { LabelModule } from '@progress/kendo-angular-label';
 import { NavigationModule } from '@progress/kendo-angular-navigation';
+import { MenusModule } from '@progress/kendo-angular-menu';
+
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { WorkComponent } from './work/work.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    WorkComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     IconsModule,
     InputsModule,
     NavigationModule,
-    LabelModule
+    LabelModule,
+    MenusModule
   ],
   providers: [],
   bootstrap: [AppComponent]
