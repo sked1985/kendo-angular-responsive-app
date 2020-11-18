@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    background-color: #dddedf;
+    display: grid;
+    grid-gap: 0.4rem;
+    height: 90vh;
+    grid-template-columns: 0.6fr 2fr;
+    grid-template-rows: 0.1fr 1fr;
+    grid-template-areas: 
+        "header header"
+        "filter-area main-content";
+}
+header {
+    grid-area: header;
+    background: #fff;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+}
+.filter-area {
+    grid-area: filter-area;
+    background: #fff;
+    border: 1px solid grey;
+    margin: 0 0 0.4rem 0.4rem;
+    border-radius: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 00.4rem;
+    max-height: 650px;
+    overflow: auto;
+}
+.filter-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.8rem;
+    margin-left: 0.8rem;
+}
+.main-content {
+    max-height: 650px;
+    overflow: auto;
+    grid-area: main-content;
+    background: #fff;
+    border: 1px solid grey;
+    margin: 0 0.4rem 0.4rem 0.4rem;
+    border-radius: 0.2rem;
+}
+
+.main-content-header {
+    border-bottom: 1px solid grey;
+    width: 100%;
+    /* height: 20%;  */
+    padding: 0.4rem;
+    display: flex;
+    justify-content: space-between;
+} 
+.content-duration {
+    display: flex;
+    flex-direction: row;
+}
+.count {
+    margin-right: 12px;
+}
+.duration {
+    margin-left: 12px;
+}
+.seperator {
+    border-left: 1px solid #5f656d; /* Border on the left */
+    width: 1px; /* Width instead of height */
+    height: 3.5rem;
+}
+
+
+.main-content-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0.4rem;
+    margin-left: 2px;
+}
+.tile {
+    background: #dddedf;
+    border: 1px solid black;
+    max-width: 200px;
+    width: 200px;
+    height: 100px;
+    margin-bottom: 4px;
+    border-radius: 2px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+        "tile-header"
+        "tile-main";
+}
+.tile-header {
+    grid-area: tile-header;
+    background-color: cornflowerblue;
+}
+.tile-main {
+    grid-area: tile-main;
+}
+
+/* app bar and menu styles */
+kendo-appbar {
+  margin: 0px;
+}
+.title {
+    font-size: 18px;
+    margin: 0;
+}
+kendo-badge-container {
+    margin-right: 8px;
+}
+ul {
+    font-size: 14px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+li {
+    margin: 0 9px;
+}
+li:hover {
+    cursor: pointer;
+    color: #D6002F;
+}
+.actions .k-button {
+    padding: 0;
+}
+.expand {
+    position: absolute;
+    bottom: 20px;
+    margin-left: 14px;
+}
+.menu-btn {
+    display: none;
+}
+kendo-avatar {
+    margin-right: 5px;
+}
+@media screen and (max-width: 920px) {
+  #drawer {
+    position: absolute;
+    left: 0px;
+    height: 90vh;
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in;
+    z-index: 10000;
+  }
+  .active {
+    transform: translateX(0%) !important;
+  }
+  .menu-btn {
+    display: block;
+    margin-left: 15px;
+    }
+    main {
+        display: grid;
+        grid-gap: 0.4rem;
+        height: 90vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.4fr 2.2fr;
+        grid-template-areas: 
+            "header"
+            "filter-area"
+            "main-content";
+    }
+    .filter-area {
+        grid-area: filter-area;
+        background: #fff;
+        border: 1px solid grey;
+        margin: 0.4rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 165px;
+    }
+    .filter-section {
+        margin-right: 0.8rem;
+    }
+
+}

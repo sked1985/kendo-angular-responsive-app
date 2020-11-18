@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "kendo-responsive-menu"
+    }
+  },
+  "defaultProject": "kendo-responsive-menu",
+  "cli": {
+    "analytics": false
+  }
 }
