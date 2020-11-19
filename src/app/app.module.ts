@@ -18,13 +18,17 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WorkComponent } from './work/work.component';
 import { SettingsComponent } from './settings/settings.component';
+import { LayoutsComponent } from './layouts/layouts.component';
+import { TaskviewComponent } from './taskview/taskview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     WorkComponent,
-    SettingsComponent
+    SettingsComponent,
+    LayoutsComponent,
+    TaskviewComponent
   ],
   imports: [
     BrowserModule,

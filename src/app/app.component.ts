@@ -10,6 +10,7 @@ import { filter, tap } from 'rxjs/operators'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = "Work";
   currentRoute: string;
   items1 = [
     {
@@ -35,15 +36,20 @@ export class AppComponent {
   public items: Array<DrawerItem> = [
       { text: 'Work', icon: 'k-i-inbox', selected: true },
       { separator: true },
-      { text: 'Notifications', icon: 'k-i-bell' },
-      { text: 'Calendar', icon: 'k-i-calendar' },
+      { text: 'Layouts', icon: 'k-i-link-horizontal' },
+      { separator: true },
+      { text: 'TaskView', icon: 'k-i-zoom' },
       { separator: true },
       { text: 'Settings', icon: 'k-i-cogs' },
-      { text: 'Favourites', icon: 'k-i-star-outline' }
+      { separator: true },
+      { text: 'Logout', icon: 'k-i-logout' }
   ];
 
   public onSelect(ev: DrawerSelectEvent): void {
       this.selected = ev.item.text;
+      this.title = this.selected;
+      if (this.selected === 'Logout')
+        this.selected = "Login";
       this.router.navigate([this.selected.toLocaleLowerCase()]);
   }
   

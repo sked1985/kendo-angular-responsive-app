@@ -59,6 +59,7 @@ kendo-avatar {
   .menu-btn {
     display: block;
     margin-left: 15px;
+    padding: 0px;
     }
     main {
         display: grid;

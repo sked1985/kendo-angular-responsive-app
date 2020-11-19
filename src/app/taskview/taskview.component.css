@@ -1,0 +1,62 @@
+main {
+    height: 90vh;
+    max-height: 90vh;
+    overflow: auto;
+    display: grid;
+    grid-gap: 0.4rem;
+    grid-template-rows: 15vh 60vh 40vh;
+    grid-template-columns: 0.5fr 1fr 1fr;
+    grid-template-areas: 
+        "header header header"
+        "side-menu info-panel info-panel1"
+        "side-menu related-tasks-panel related-tasks-panel";
+}
+header {
+    grid-area: header;
+    background-color: #fff;
+}
+.side-menu {
+    grid-area: side-menu;
+    background-color: #fff;
+    margin-left: 0.4rem;
+    margin-bottom: 0.4rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+.info-panel {
+    grid-area: info-panel;
+    background-color: #fff;
+    border-radius: 0.2rem;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+.info-panel1 {
+    grid-area: info-panel1;
+    background-color: #fff;
+    margin-right: 0.4rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+.related-tasks-panel {
+    grid-area: related-tasks-panel;
+    background-color: #fff;
+    margin-bottom: 0.4rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+
+@media screen and (max-width: 1024px) {
+    main {
+        height: 90vh;
+        max-height: 90vh;
+        overflow: auto;
+        display: grid;
+        grid-gap: 0.4rem;
+        grid-template-rows: 15vh 15vh 60vh 40vh;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "header header"
+            "side-menu side-menu"
+            "info-panel info-panel1"
+            "related-tasks-panel related-tasks-panel";
+    }
+}
