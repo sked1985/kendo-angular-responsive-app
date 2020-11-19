@@ -1,6 +1,9 @@
 /* app bar and menu styles */
 kendo-appbar {
   margin: 0px;
+  min-height: 10vh;
+  background: orange;
+  color: #fff;
 }
 .title {
     font-size: 18px;
@@ -36,7 +39,6 @@ li:hover {
 }
 kendo-avatar {
     margin-right: 5px;
-    position: absolute;
 }
 @media screen and (max-width: 920px) {
   #drawer {

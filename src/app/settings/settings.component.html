@@ -1,0 +1,44 @@
+<main>
+    <header>
+        <div class="col-sm">
+            <h4>Account</h4>
+            <p class="h2">Barry Mc Gettigan</p>
+        </div>
+        <div>
+            <button kendoButton [look]="'outline'" [primary]="true" routerLink="/login">Sign out</button>
+        </div>
+    </header>
+    <div class="side-menu">
+        <button kendoButton>Profile</button>
+        <button kendoButton>Notifications</button>
+        <button kendoButton>Application</button>
+    </div>
+    <div class="content1">
+        <div class="profile-header">
+            <h4>Profile</h4>
+        </div>
+        <div class="avatar-col">
+            <kendo-avatar [imageSrc]="kendokaAvatar"  width="100px"  height="100px" [shape]="'circle'"></kendo-avatar>
+        </div>
+        <div class="profile-detail-col">
+            <form class="k-form" [formGroup]="form">
+                <kendo-formfield>
+                    <kendo-label [for]="fullName" text="Full Name"></kendo-label>
+                    <input kendoTextBox #fullName [formControlName]="'fullName'" />
+                    <kendo-formerror>Error: Full Name is required</kendo-formerror>
+                </kendo-formfield>
+
+                <kendo-formfield>
+                    <kendo-label [for]="email" text="Email"></kendo-label>
+                    <input [formControlName]="'email'" kendoTextBox #email/>
+                    <kendo-formerror *ngIf="form.controls.email.errors?.required">Error: Email is required</kendo-formerror>
+                    <kendo-formerror *ngIf="form.controls.email.errors?.email">Error: Not valid email format</kendo-formerror>
+                </kendo-formfield>
+                 <div class="k-form-buttons">
+                    <button class="k-button k-primary" (click)="submitForm()">Update details</button>
+                    <button class="k-button" (click)="clearForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

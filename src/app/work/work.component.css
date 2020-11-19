@@ -12,8 +12,6 @@ main {
 header {
     grid-area: header;
     background: #fff;
-    border-bottom: 1px solid grey;
-    border-top: 1px solid grey;
     display: flex;
     justify-content: space-between;
     padding: 0.8rem;
@@ -21,7 +19,6 @@ header {
 .filter-area {
     grid-area: filter-area;
     background: #fff;
-    border: 1px solid grey;
     margin: 0 0 0.4rem 0.4rem;
     border-radius: 0.2rem;
     display: flex;
@@ -29,6 +26,7 @@ header {
     padding: 00.4rem;
     max-height: 650px;
     overflow: auto;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
 }
 .filter-section {
     display: flex;
@@ -41,9 +39,9 @@ header {
     overflow: auto;
     grid-area: main-content;
     background: #fff;
-    border: 1px solid grey;
     margin: 0 0.4rem 0.4rem 0.4rem;
     border-radius: 0.2rem;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
 }
 
 .main-content-header {
@@ -117,7 +115,6 @@ header {
       .filter-area {
           grid-area: filter-area;
           background: #fff;
-          border: 1px solid grey;
           margin: 0.4rem;
           flex-direction: row;
           flex-wrap: wrap;

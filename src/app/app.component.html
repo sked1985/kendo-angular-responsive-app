@@ -1,7 +1,7 @@
-<kendo-appbar [position]="'top'" style="height: 10vh;" *ngIf="currentRoute !=='/login'">
+<kendo-appbar [position]="'top'" *ngIf="currentRoute !=='/login'">
   <kendo-appbar-section>
     <button class="k-button k-button-clear menu-btn" (click)="toggle()">
-      <kendo-icon [name]="'menu'"></kendo-icon>
+      <kendo-icon [name]="'menu'" style="color: #fff;"></kendo-icon>
     </button>
   </kendo-appbar-section>
   <kendo-appbar-section>
@@ -11,14 +11,14 @@
   <kendo-appbar-spacer></kendo-appbar-spacer>
   <kendo-appbar-section>
    <div> 
-    <kendo-avatar [imageSrc]="kendokaAvatar" [shape]="'circle'" [width]="'40px'" [height]="'40px'" #target></kendo-avatar>
-    <kendo-menu [items]="items1" [openOnClick]="true" (select)="onSelectMenu($event)">
- </kendo-menu>
+    <kendo-avatar [imageSrc]="kendokaAvatar" [shape]="'circle'" [width]="'40px'" [height]="'40px'"  routerLink="/settings"></kendo-avatar>
+    <!-- <kendo-menu [items]="items1" [openOnClick]="true" (select)="onSelectMenu($event)"> -->
+ <!-- </kendo-menu> -->
    </div>
   </kendo-appbar-section>
 </kendo-appbar>
 <kendo-drawer-container>
-  <kendo-drawer #drawer [items]="items" [mode]="'push'" [mini]="true" [expanded]="true" (select)="onSelect($event)"
+  <kendo-drawer #drawer [items]="items" [mode]="'push'" [mini]="true" [expanded]="false" (select)="onSelect($event)"
     id="drawer" [ngClass]="active  ? 'active' : ''" *ngIf="currentRoute !=='/login'">
     <ng-template kendoDrawerFooterTemplate>
       <div class="expand">

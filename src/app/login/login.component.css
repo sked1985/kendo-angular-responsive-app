@@ -1,13 +1,55 @@
 main {
-    background-color: #dddedf;
+    background: #fff8ee;
+    display: grid;
+    grid-gap: 0.4rem;
     height: 100vh;
+    grid-template-columns: 1.5fr 0.8fr;
+    grid-template-rows: 0.4fr 1.4fr;
+    grid-template-areas: 
+        "logo-header logo-header"
+        "banner sign-in";
+}
+
+.logo-header {
+    grid-area: logo-header;
+}
+.banner {
+    grid-area: banner;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
 }
+
+.banner img {
+    flex-shrink: 0;
+    min-width: 70%;
+    min-height: 70%
+}
+
 .sign-in {
-    background: #fff;
-    margin: auto;
+    grid-area: sign-in;
+    margin-right: 0.8rem;
 }
+
 .k-avatar {
     margin-left: 80px;
     font-size: 30px;
-  }
+}
+@media screen and (max-width: 790px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr;
+        grid-template-areas: 
+        "logo-header"
+        "sign-in";
+    }
+    .sign-in {
+        margin: auto;
+    }
+    .banner {
+        display: none;
+    }
+}
+
+

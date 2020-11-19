@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { LayoutModule } from '@progress/kendo-angular-layout';
 import { IndicatorsModule } from '@progress/kendo-angular-indicators';
 import { InputsModule } from '@progress/kendo-angular-inputs';
@@ -16,12 +17,14 @@ import { MenusModule } from '@progress/kendo-angular-menu';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WorkComponent } from './work/work.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    WorkComponent
+    WorkComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { WorkComponent } from './work/work.component';
     InputsModule,
     NavigationModule,
     LabelModule,
-    MenusModule
+    MenusModule,
+    ButtonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
