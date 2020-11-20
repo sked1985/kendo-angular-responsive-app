@@ -16,6 +16,11 @@
                 <span class="k-icon k-i-list-unordered"></span>
               </ng-template>
             </kendo-tabstrip-tab>
+            <kendo-tabstrip-tab>
+              <ng-template kendoTabTitle>
+                <span class="k-icon k-i-list-ordered"></span>
+              </ng-template>
+            </kendo-tabstrip-tab>
           </kendo-tabstrip>
         </div>
       </header>
@@ -154,5 +159,76 @@
               </ng-template>
           </kendo-grid-column>
       </kendo-grid>
+      </div>
+      <div class="main-content-flex" *ngIf="selectedTab === 2">
+        <div class="flex-row">
+          <div class="col-info">
+            <div class="col-header">
+              <h4 style="color: green;">In Service</h4>
+            </div>
+            <div class="content-duration">
+              <div class="count">
+                <h5>120</h5>
+                items
+              </div>
+              <div class="seperator"></div>
+              <div class="duration">
+                <h5>12hr</h5>
+              duration
+              </div>
+            </div>
+          </div>
+          <div class="col-workitems">
+            <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+            <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+            <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="col-info">
+            <div class="col-header">
+              <h4 style="color: orange;">Going Out</h4>
+            </div>
+            <div class="content-duration">
+              <div class="count">
+                <h5>120</h5>
+                items
+              </div>
+              <div class="seperator"></div>
+              <div class="duration">
+                <h5>12hr</h5>
+              duration
+              </div>
+            </div>
+          </div>
+          <div class="col-workitems">
+            <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+            <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+            <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="col-info">
+            <div class="col-header">
+              <h4 style="color: red;">Out Of Service</h4>
+            </div>
+            <div class="content-duration">
+              <div class="count">
+                <h5>120</h5>
+                items
+              </div>
+              <div class="seperator"></div>
+              <div class="duration">
+                <h5>12hr</h5>
+              duration
+              </div>
+            </div>
+          </div>
+          <div class="col-workitems">
+            <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+            <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+            <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          </div>
+        </div>
       </div>
     </main>
