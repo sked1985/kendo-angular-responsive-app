@@ -7,8 +7,8 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  imagePath = "../../assets/banner.PNG";
-  logoPath = "../../assets/logo.PNG";
+  imagePath = "https://ucarecdn.com/933223ac-2dfc-41b5-b094-8f85b4b18c41/";
+  logoPath = "https://www.zarion.com/wp-content/themes/zarion/images/zarion.svg";
 
   public form: FormGroup = new FormGroup({
     username: new FormControl(),

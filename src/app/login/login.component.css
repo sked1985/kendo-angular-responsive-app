@@ -13,6 +13,10 @@ main {
 .logo-header {
     grid-area: logo-header;
 }
+.logo-header img{
+    width: 174px;
+    padding: 19px;
+}
 .banner {
     grid-area: banner;
     display: flex;
