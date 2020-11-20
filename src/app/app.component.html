@@ -1,11 +1,11 @@
-<kendo-appbar [position]="'top'" *ngIf="currentRoute !=='/login'">
+<kendo-appbar [position]="'top'" *ngIf="!hideNav">
   <kendo-appbar-section>
     <button class="k-button k-button-clear menu-btn" (click)="toggle()">
       <kendo-icon [name]="'menu'" style="color: #fff;"></kendo-icon>
     </button>
   </kendo-appbar-section>
   <kendo-appbar-section>
-    <h1 class="title">{{title}}</h1>
+    <h1 class="title">My Work</h1>
   </kendo-appbar-section>
   <kendo-appbar-spacer [width]="'32px'"></kendo-appbar-spacer>
   <kendo-appbar-spacer></kendo-appbar-spacer>
@@ -19,7 +19,7 @@
 </kendo-appbar>
 <kendo-drawer-container>
   <kendo-drawer #drawer [items]="items" [mode]="'push'" [mini]="true" [expanded]="false" (select)="onSelect($event)"
-    id="drawer" [ngClass]="active  ? 'active' : ''" *ngIf="currentRoute !=='/login'">
+    id="drawer" [ngClass]="active  ? 'active' : ''" *ngIf="!hideNav">
     <ng-template kendoDrawerFooterTemplate>
       <div class="expand">
         <button kendoButton class="k-button k-button-outline" (click)="drawer.toggle()">

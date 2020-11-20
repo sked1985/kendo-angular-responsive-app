@@ -11,7 +11,7 @@ import { filter, tap } from 'rxjs/operators'
 })
 export class AppComponent {
   title = "Work";
-  currentRoute: string;
+  hideNav: boolean;
   items1 = [
     {
         text: '',
@@ -23,9 +23,12 @@ export class AppComponent {
     router.events.pipe(
       filter(event => event instanceof NavigationEnd),
       tap(e => console.log(e))
-    ).subscribe(route => 
-      this.currentRoute = route['url']
-      )
+    ).subscribe((route: Event) => {
+      if (route['url'] === '/login' || route['url'] === '/')
+        this.hideNav = true;
+      else
+        this.hideNav = false;
+    })
   }
 
   public selected = 'Work';

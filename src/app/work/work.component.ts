@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { products } from './products';
 
 @Component({
   selector: 'app-work',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkComponent implements OnInit {
   selectedTab = 0;
+  gridData: any[] = products;
   constructor() { }
 
   ngOnInit(): void {

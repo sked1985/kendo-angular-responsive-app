@@ -2,7 +2,7 @@
 kendo-appbar {
   margin: 0px;
   min-height: 10vh;
-  background: orange;
+  background: #FFB435 !important;
   color: #fff;
 }
 .title {

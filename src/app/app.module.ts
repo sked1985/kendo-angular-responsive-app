@@ -13,6 +13,7 @@ import { IconsModule } from '@progress/kendo-angular-icons';
 import { LabelModule } from '@progress/kendo-angular-label';
 import { NavigationModule } from '@progress/kendo-angular-navigation';
 import { MenusModule } from '@progress/kendo-angular-menu';
+import { GridModule } from '@progress/kendo-angular-grid';
 
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -43,7 +44,8 @@ import { TaskviewComponent } from './taskview/taskview.component';
     NavigationModule,
     LabelModule,
     MenusModule,
-    ButtonsModule
+    ButtonsModule,
+    GridModule
   ],
   providers: [],
   bootstrap: [AppComponent]

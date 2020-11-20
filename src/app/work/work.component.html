@@ -2,7 +2,7 @@
       <header>
         <div class="work-item-count">
           <span>14 of 14</span><br />
-          <span>Total workload</span>
+          <h4>Total workload</h4>
         </div>
         <div class="tab-nav">
           <kendo-tabstrip (tabSelect)="onTabSelect($event)">
@@ -20,91 +20,82 @@
         </div>
       </header>
       <div class="filter-area">
+        <div class="filter-header">
+          <h4>Filter by:</h4>
+        </div>
         <div class="filter-section">
           <h6>SLA</h6>
           <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
             In Service
           </label>
           <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
             Going Out
           </label>
           <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
             Out of Service
           </label>
         </div>
         <div class="filter-section">
           <h6>Worktype</h6>
           <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
             Worktype
           </label>
           <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
             Complaints
           </label>
           <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
             Loans
           </label>
         </div>
         <div class="filter-section">
           <h6>Region</h6>
           <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
             North
           </label>
           <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
             South
           </label>
           <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
             East
           </label>
           <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
             West
           </label>
         </div>
         <div class="filter-section">
-          <h6>Region</h6>
+          <h6>County</h6>
           <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            North
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            Dublin
           </label>
           <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            South
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            Wicklow
           </label>
           <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            East
-          </label>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            West
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            Laois
           </label>
         </div>
         <div class="filter-section">
-          <h6>Region</h6>
+          <h6>Type</h6>
           <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            North
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            Mortage
           </label>
           <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            South
-          </label>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            East
-          </label>
-          <label class="k-label">
-            <input type="checkbox" kendoCheckBox>
-            West
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            Loans
           </label>
         </div>
       </div>  
@@ -146,6 +137,22 @@
         </div>
       </div>
       <div class="main-content" *ngIf="selectedTab === 1">
-        diplay list
+        <kendo-grid [data]="gridData">
+          <kendo-grid-column field="ProductID" title="ID" width="40">
+          </kendo-grid-column>
+          <kendo-grid-column field="ProductName" title="Name" width="250">
+          </kendo-grid-column>
+          <kendo-grid-column field="Category.CategoryName" title="Category" [width]="250">
+          </kendo-grid-column>
+          <kendo-grid-column field="UnitPrice" title="Price" width="80">
+          </kendo-grid-column>
+          <kendo-grid-column field="UnitsInStock" title="In stock" width="80">
+          </kendo-grid-column>
+          <kendo-grid-column field="Discontinued" title="Discontinued" width="120">
+              <ng-template kendoGridCellTemplate let-dataItem>
+                  <input type="checkbox" [checked]="dataItem.Discontinued" disabled/>
+              </ng-template>
+          </kendo-grid-column>
+      </kendo-grid>
       </div>
     </main>
