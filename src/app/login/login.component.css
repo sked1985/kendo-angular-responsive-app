@@ -39,7 +39,7 @@ main {
 @media screen and (max-width: 790px) {
     main {
         grid-template-columns: 1fr;
-        grid-template-rows: 0.5fr 1fr;
+        grid-template-rows: 0.4fr 1fr;
         grid-template-areas: 
         "logo-header"
         "sign-in";
@@ -49,6 +49,11 @@ main {
     }
     .banner {
         display: none;
+    }
+}
+@media screen and (max-width: 396px) {
+    kendo-card {
+        width: 300px !important;
     }
 }
 
