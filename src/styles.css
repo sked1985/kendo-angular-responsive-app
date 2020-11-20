@@ -4,8 +4,15 @@
     box-sizing: border-box;
 }
 
+html {
+    height: -webkit-fill-available;
+}
+
 body {
     margin: 0;
     background-color: #f2f2f2;
     font-size: 14px;
+    min-height: 100vh;
+    /* mobile viewport bug fix */
+    min-height: -webkit-fill-available;
 }
