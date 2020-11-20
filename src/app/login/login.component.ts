@@ -7,6 +7,8 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  imagePath = "../../assets/banner.PNG";
+  logoPath = "../../assets/logo.PNG";
 
   public form: FormGroup = new FormGroup({
     username: new FormControl(),

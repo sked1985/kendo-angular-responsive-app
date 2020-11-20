@@ -1,0 +1,158 @@
+ <main>
+      <header>
+        <div class="work-item-count">
+          <span>14 of 14</span><br />
+          <h4>Total workload</h4>
+        </div>
+        <div class="tab-nav">
+          <kendo-tabstrip (tabSelect)="onTabSelect($event)">
+            <kendo-tabstrip-tab [selected]="true">
+              <ng-template kendoTabTitle>
+                <span class="k-icon k-i-grid"></span>
+              </ng-template>
+            </kendo-tabstrip-tab>
+            <kendo-tabstrip-tab>
+              <ng-template kendoTabTitle>
+                <span class="k-icon k-i-list-unordered"></span>
+              </ng-template>
+            </kendo-tabstrip-tab>
+          </kendo-tabstrip>
+        </div>
+      </header>
+      <div class="filter-area">
+        <div class="filter-header">
+          <h4>Filter by:</h4>
+        </div>
+        <div class="filter-section">
+          <h6>SLA</h6>
+          <label class="k-label">
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            In Service
+          </label>
+          <label class="k-label">
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            Going Out
+          </label>
+          <label class="k-label">
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            Out of Service
+          </label>
+        </div>
+        <div class="filter-section">
+          <h6>Worktype</h6>
+          <label class="k-label">
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            Worktype
+          </label>
+          <label class="k-label">
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            Complaints
+          </label>
+          <label class="k-label">
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            Loans
+          </label>
+        </div>
+        <div class="filter-section">
+          <h6>Region</h6>
+          <label class="k-label">
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            North
+          </label>
+          <label class="k-label">
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            South
+          </label>
+          <label class="k-label">
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            East
+          </label>
+          <label class="k-label">
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            West
+          </label>
+        </div>
+        <div class="filter-section">
+          <h6>County</h6>
+          <label class="k-label">
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            Dublin
+          </label>
+          <label class="k-label">
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            Wicklow
+          </label>
+          <label class="k-label">
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            Laois
+          </label>
+        </div>
+        <div class="filter-section">
+          <h6>Type</h6>
+          <label class="k-label">
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            Mortage
+          </label>
+          <label class="k-label">
+            <input type="checkbox" kendoCheckBox [indeterminate]="true">
+            Loans
+          </label>
+        </div>
+      </div>  
+      <div class="main-content" *ngIf="selectedTab === 0">
+        <div class="main-content-header">
+          <div class="content-duration">
+            <div class="count">
+              <h5>120</h5>
+              items
+            </div>
+            <div class="seperator"></div>
+            <div class="duration">
+              <h5>12hr</h5>
+            duration
+            </div>
+          </div>
+          <div class="header-btn">
+            <button kendoButton style="width: 61px;">Sort</button>
+          </div>
+        </div>
+        <div class="main-content-tiles">
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+          <div class="tile"><div class="tile-header">I am the header</div><div class="tile-main">I am the main</div></div>
+        </div>
+      </div>
+      <div class="main-content" *ngIf="selectedTab === 1">
+        <kendo-grid [data]="gridData">
+          <kendo-grid-column field="ProductID" title="ID" width="40">
+          </kendo-grid-column>
+          <kendo-grid-column field="ProductName" title="Name" width="250">
+          </kendo-grid-column>
+          <kendo-grid-column field="Category.CategoryName" title="Category" [width]="250">
+          </kendo-grid-column>
+          <kendo-grid-column field="UnitPrice" title="Price" width="80">
+          </kendo-grid-column>
+          <kendo-grid-column field="UnitsInStock" title="In stock" width="80">
+          </kendo-grid-column>
+          <kendo-grid-column field="Discontinued" title="Discontinued" width="120">
+              <ng-template kendoGridCellTemplate let-dataItem>
+                  <input type="checkbox" [checked]="dataItem.Discontinued" disabled/>
+              </ng-template>
+          </kendo-grid-column>
+      </kendo-grid>
+      </div>
+    </main>

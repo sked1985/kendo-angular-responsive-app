@@ -1,0 +1,113 @@
+main {
+    background-color: #dddedf;
+    display: grid;
+    grid-gap: 0.4rem;
+    height: 90vh;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: 0.4fr 2fr;
+    grid-template-areas: 
+        "header header  header"
+        "side-menu content1 content1";
+}
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    flex-wrap: wrap;
+    background: #fff;
+}
+.col-sm {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+h4, h5 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: rgba(0,0,0,.5);
+    font-weight: 700;
+}
+p {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 0px;
+}
+.side-menu {
+    background-color: #fff;
+    grid-area: side-menu;
+    margin: 0 0 0.4rem 0.4rem;
+    border-radius: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 00.4rem;
+}
+.side-menu button {
+    margin-bottom: 5px;
+}
+.content1{
+    background-color: #fff;
+    grid-area: content1;
+    margin: 0 0.4rem 0.4rem 0.4rem;
+    border-radius: 0.2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 0.2fr 2fr;
+    grid-template-areas: 
+        "profile-header profile-header"
+        "avatar-col profile-detail-col";
+}
+.profile-header {
+    grid-area: profile-header;
+}
+.profile-header h4 {
+    padding: 6px 0px 0px 15px;
+}
+.avatar-col {
+    grid-area: avatar-col;
+    display: flex;
+    justify-content: center;
+}
+.avatar-col kendo-avatar{
+    margin: 20px;
+}
+.profile-detail-col {
+    grid-area: profile-detail-col;
+}
+.profile-detail-col form {
+    max-width: 80%;
+}
+
+
+@media screen and (max-width: 920px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.2fr 2fr;
+        grid-template-areas: 
+            "header"
+            "side-menu"
+            "content1";
+    }
+    .side-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+@media screen and (max-width: 534px) {
+   .content1 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 1.5fr;
+    grid-template-areas: 
+        "profile-header avatar-col"
+         "profile-detail-col profile-detail-col";
+   }
+   kendo-avatar {
+    flex-basis: 80px !important;
+    width: 80px !important;
+    height: 80px !important;
+   }
+   .profile-detail-col {
+    margin-left: 77px;
+   }
+}

@@ -10,38 +10,65 @@ import { filter, tap } from 'rxjs/operators'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  currentRoute: string;
+  title = "Work";
+  hideNav: boolean;
+  items1 = [
+    {
+        text: '',
+        items: [{ text: 'settings' }, { text: 'logout' }]
+    }
+];
 
   constructor(private router:Router) {
     router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(route => this.currentRoute = route['url'])
+      filter(event => event instanceof NavigationEnd),
+      tap(e => console.log(e))
+    ).subscribe((route: Event) => {
+      if (route['url'] === '/login' || route['url'] === '/')
+        this.hideNav = true;
+      else
+        this.hideNav = false;
+    })
   }
 
-  public selected = 'Inbox';
+  public selected = 'Work';
   public kendokaAvatar = 'https://www.telerik.com/kendo-angular-ui-develop/components/navigation/appbar/assets/kendoka-angular.png';
   active = false;
-  selectedTab = 0;
+  
 
   public items: Array<DrawerItem> = [
-      { text: 'Inbox', icon: 'k-i-inbox', selected: true },
+      { text: 'Work', icon: 'k-i-inbox', selected: true },
       { separator: true },
-      { text: 'Notifications', icon: 'k-i-bell' },
-      { text: 'Calendar', icon: 'k-i-calendar' },
+      { text: 'Layouts', icon: 'k-i-link-horizontal' },
       { separator: true },
-      { text: 'Attachments', icon: 'k-i-hyperlink-email' },
-      { text: 'Favourites', icon: 'k-i-star-outline' }
+      { text: 'TaskView', icon: 'k-i-zoom' },
+      { separator: true },
+      { text: 'Settings', icon: 'k-i-cogs' },
+      { separator: true },
+      { text: 'Logout', icon: 'k-i-logout' }
   ];
 
   public onSelect(ev: DrawerSelectEvent): void {
       this.selected = ev.item.text;
+      this.title = this.selected;
+      if (this.selected === 'Logout')
+        this.selected = "Login";
+      this.router.navigate([this.selected.toLocaleLowerCase()]);
+  }
+  
+  onSelectMenu(event) {
+    if (event.item.text !== "") {
+      if(event.item.text === "logout") {
+        this.router.navigate(["login"])
+      }
+      if(event.item.text === "settings") {
+        this.router.navigate(["settings"])
+      }
+    } 
   }
 
-  toggle(drawer) {
+  toggle() {
     this.active = !this.active;
   }
 
-  onTabSelect(event) {
-    this.selectedTab = event.index;
-  }
 }
