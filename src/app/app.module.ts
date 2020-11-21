@@ -21,6 +21,7 @@ import { WorkComponent } from './work/work.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LayoutsComponent } from './layouts/layouts.component';
 import { TaskviewComponent } from './taskview/taskview.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TaskviewComponent } from './taskview/taskview.component';
     WorkComponent,
     SettingsComponent,
     LayoutsComponent,
-    TaskviewComponent
+    TaskviewComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
