@@ -60,3 +60,21 @@ header {
             "related-tasks-panel related-tasks-panel";
     }
 }
+
+@media screen and (max-width: 682px) {
+    main {
+        height: 90vh;
+        max-height: 90vh;
+        overflow: auto;
+        display: grid;
+        grid-gap: 0.4rem;
+        grid-template-rows: 15vh 15vh 60vh 60vh 40vh;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "side-menu"
+            "info-panel"
+            "info-panel1"
+            "related-tasks-panel";
+    }
+}
