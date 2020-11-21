@@ -13,7 +13,7 @@ body {
     background-color: #f2f2f2;
     font-size: 14px;
     min-height: 100vh;
-    /* mobile viewport bug fix */
     min-height: -webkit-fill-available;
     font-family: 'Poppins';
+    overflow: hidden;
 }
