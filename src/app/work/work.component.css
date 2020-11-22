@@ -24,7 +24,6 @@ header {
     display: flex;
     flex-direction: column;
     padding: 00.4rem;
-    max-height: 650px;
     overflow: auto;
     box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
 }
@@ -39,7 +38,6 @@ header {
     width: 100%;
 }
 .main-content-flex {
-    max-height: 650px;
     overflow: auto;
 }
 .flex-row {
@@ -57,7 +55,6 @@ header {
     flex-wrap: wrap;
 }
 .main-content {
-    max-height: 650px;
     overflow: auto;
     grid-area: main-content;
     background: #fff;
