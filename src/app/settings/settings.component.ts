@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-settings',
-  templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.css']
+    selector: 'app-settings',
+    templateUrl: './settings.component.html',
+    styleUrls: ['./settings.component.css']
 })
-export class SettingsComponent  {
-  kendokaAvatar = 'https://www.telerik.com/kendo-angular-ui-develop/components/navigation/appbar/assets/kendoka-angular.png';
-  public phoneNumberValue: string = '';
+export class SettingsComponent {
+    selectedOption = 'profile';
+    kendokaAvatar = 'https://www.telerik.com/kendo-angular-ui-develop/components/navigation/appbar/assets/kendoka-angular.png';
+    public phoneNumberValue: string = '';
     public phoneNumberMask: string = '(999) 000-00-00-00';
 
     public form: FormGroup;
@@ -37,11 +38,15 @@ export class SettingsComponent  {
         });
     }
 
-     public submitForm(): void {
+    public submitForm(): void {
         this.form.markAllAsTouched();
     }
 
-     public clearForm(): void {
+    public clearForm(): void {
         this.form.reset();
+    }
+
+    optionChanged(option) {
+        this.selectedOption = option;
     }
 }
