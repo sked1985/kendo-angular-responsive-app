@@ -10,9 +10,9 @@ main {
         "side-menu content1 content1";
 }
 .btn-active {
-    border-color: #ff6358 !important;
+    border-color: #03a9f4 !important;
     color: #ffffff !important;
-    background-color: #ff6358 !important;
+    background-color: #03a9f4 !important;
     background-image: none !important;
 }
 header {
