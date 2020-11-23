@@ -9,16 +9,19 @@
         </div>
     </header>
     <div class="side-menu">
-        <button kendoButton>Profile</button>
-        <button kendoButton>Notifications</button>
-        <button kendoButton>Application</button>
+        <button [ngClass]="selectedOption === 'profile' ? 'btn-active' : ''" kendoButton
+            (click)="optionChanged('profile')" [look]="'outline'" [primary]="true">Profile</button>
+        <button [ngClass]="selectedOption === 'notifications' ? 'btn-active' : ''" kendoButton
+            (click)="optionChanged('notifications')" [look]="'outline'" [primary]="true">Notifications</button>
+        <button [ngClass]="selectedOption === 'application' ? 'btn-active' : ''" kendoButton
+            (click)="optionChanged('application')" [look]="'outline'" [primary]="true">Application</button>
     </div>
-    <div class="content1">
+    <div class="content1" *ngIf="selectedOption === 'profile'">
         <div class="profile-header">
             <h4>Profile</h4>
         </div>
         <div class="avatar-col">
-            <kendo-avatar [imageSrc]="kendokaAvatar"  width="100px"  height="100px" [shape]="'circle'"></kendo-avatar>
+            <kendo-avatar [imageSrc]="kendokaAvatar" width="100px" height="100px" [shape]="'circle'"></kendo-avatar>
         </div>
         <div class="profile-detail-col">
             <form class="k-form" [formGroup]="form">
@@ -30,15 +33,51 @@
 
                 <kendo-formfield>
                     <kendo-label [for]="email" text="Email"></kendo-label>
-                    <input [formControlName]="'email'" kendoTextBox #email/>
-                    <kendo-formerror *ngIf="form.controls.email.errors?.required">Error: Email is required</kendo-formerror>
-                    <kendo-formerror *ngIf="form.controls.email.errors?.email">Error: Not valid email format</kendo-formerror>
+                    <input [formControlName]="'email'" kendoTextBox #email />
+                    <kendo-formerror *ngIf="form.controls.email.errors?.required">Error: Email is required
+                    </kendo-formerror>
+                    <kendo-formerror *ngIf="form.controls.email.errors?.email">Error: Not valid email format
+                    </kendo-formerror>
                 </kendo-formfield>
-                 <div class="k-form-buttons">
+                <div class="k-form-buttons">
                     <button class="k-button k-primary" (click)="submitForm()">Update details</button>
                     <button class="k-button" (click)="clearForm()">Cancel</button>
                 </div>
             </form>
+        </div>
+    </div>
+    <div class="content" *ngIf="selectedOption === 'notifications'">
+        <div class="profile-header">
+            <h4>Notifications</h4>
+        </div>
+        <div class="alerts-section">
+            <div class="alert-line">
+                Do you want to recieve alerts?
+                <kendo-switch></kendo-switch>
+            </div>
+            <div class="alert-line">
+                Do you want to recieve emails?
+                <kendo-switch></kendo-switch>
+            </div>
+            <div class="alert-line">
+                Do you want to recieve task updates?
+                <kendo-switch></kendo-switch>
+            </div>
+        </div>
+    </div>
+    <div class="content" *ngIf="selectedOption === 'application'">
+        <div class="profile-header">
+            <h4>Application</h4>
+        </div>
+        <div class="alerts-section">
+            <div class="alert-line">
+                Reset Grid
+                <button kendoButton [look]="'outline'" [primary]="true" routerLink="/login">Reset</button>
+            </div>
+            <div class="alert-line">
+                Breakdown work by
+                <kendo-switch></kendo-switch>
+            </div>
         </div>
     </div>
 </main>

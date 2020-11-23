@@ -9,6 +9,12 @@ main {
         "header header  header"
         "side-menu content1 content1";
 }
+.btn-active {
+    border-color: #ff6358 !important;
+    color: #ffffff !important;
+    background-color: #ff6358 !important;
+    background-image: none !important;
+}
 header {
     grid-area: header;
     display: flex;
@@ -80,6 +86,9 @@ p {
 
 
 @media screen and (max-width: 920px) {
+    .content {
+        width: 99% !important;
+    }
     main {
         grid-template-columns: 1fr;
         grid-template-rows: 0.2fr 0.2fr 2fr;
@@ -95,6 +104,9 @@ p {
     }
 }
 @media screen and (max-width: 534px) {
+    .content {
+        width: 99% !important;
+    }
    .content1 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 0.5fr 1.5fr;
@@ -110,4 +122,22 @@ p {
    .profile-detail-col {
     margin-left: 77px;
    }
+}
+
+.alerts-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    background-color: #fff;
+    margin: 0 0.4rem 0.4rem 0.4rem;
+    border-radius: 0.2rem;
+    width: 165%;
+}
+
+.alert-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
 }
